@@ -15,6 +15,7 @@ class App extends Component {
       loading: true
     };
     this.fetchData = this.fetchData.bind(this);
+	this.handleSearch = this.handleSearch.bind(this);
   }
 	
   fetchData(state, instance) {
@@ -29,10 +30,26 @@ class App extends Component {
     });
   }
 	
+  handleSearch(e) {
+	e.preventDefault();
+	this.setState({ loading: true });
+	var criteria = this.refs.searchtext.value.trim();
+    axios.get(apiurl, {params:{search: criteria}})
+      .then(res => {
+      this.setState({
+        data: res.data,
+        pages: 1,
+        loading: false
+      });
+    });
+  }
+	
   render() {
 	const { data, pages, loading } = this.state;
     return (
       <div className="App">
+	    <input ref="searchtext" type="search"/>
+		<button onClick={this.handleSearch}>search</button>
         <ReactTable
           columns={[
 			{

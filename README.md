@@ -28,7 +28,7 @@ standalone-service
 ? What is the base url? http://localhost  
 ```
 6 edit wdio.conf.js, replace "browserName: ‘firefox’," with "browserName: ‘chrome’,"  
-7 cd ..\..
+7 cd ../..  
 8 (optional) run test cases  
 ```
 npm run test

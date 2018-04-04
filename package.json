@@ -3,14 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-table": "^6.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "selenium-setup": "selenium-standalone install",
+    "selenium-start": "selenium-standalone start",
+    "e2e-tests": ".\\node_modules\\.bin\\wdio .\\node_modules\\.bin\\wdio.conf.js",
+    "e2e-tests-watch": ".\\node_modules\\.bin\\wdio .\\node_modules\\.bin\\wdio.conf.js --watch"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.14.1",
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-test-renderer": "^16.3.1",
+    "selenium-standalone": "^6.13.0",
+    "wdio-dot-reporter": "0.0.8",
+    "wdio-mocha-framework": "^0.5.10",
+    "wdio-selenium-standalone-service": "0.0.9",
+    "webdriverio": "^4.12.0"
   }
 }

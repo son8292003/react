@@ -20,11 +20,12 @@ class App extends Component {
 	
   fetchData(state, instance) {
     this.setState({ loading: true });
-    axios.get(apiurl)
+	var criteria = this.refs.searchtext.value.trim();
+    axios.get(apiurl, {params:{search: criteria}})
       .then(res => {
       this.setState({
         data: res.data,
-        pages: 1,
+        pages: Math.ceil(res.data.length/state.pageSize),
         loading: false
       });
     });
@@ -38,7 +39,7 @@ class App extends Component {
       .then(res => {
       this.setState({
         data: res.data,
-        pages: 1,
+        pages: Math.ceil(res.data.length/this.refs.table.state.pageSize),
         loading: false
       });
     });
@@ -50,7 +51,7 @@ class App extends Component {
       <div className="App">
 	    <input ref="searchtext" type="search"/>
 		<button onClick={this.handleSearch}>search</button>
-        <ReactTable
+        <ReactTable ref="table"
           columns={[
 			{
               Header: "Title",

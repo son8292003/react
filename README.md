@@ -2,7 +2,7 @@
 A simple react project to display data from REST api using table.
 
 ## To run this project
-1 clone this project 
+1 clone this project   
 2 at the root folder of the project, run  
 ```
 npm install  

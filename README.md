@@ -7,7 +7,7 @@ A simple react project to display data from REST api using table.
 ```
 npm install  
 ```
-3 cd node_modules\.bin\  
+3 cd node_modules/.bin/  
 4 run
 ```
 wdio config  
